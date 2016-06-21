@@ -1,0 +1,42 @@
+{
+  "name": "grunt-starter",
+  "version": "1.0.0",
+  "author": "xue.zeng",
+  "keywords": [
+    "grunt"
+  ],
+  "description": "grunt starter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "assemble": "^0.12.0",
+    "grunt": "^1.0.1",
+    "grunt-  contrib-qunit": "^1.2.0",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-grunticon": "^2.2.3",
+    "grunt-rigger": "^0.6.0",
+    "grunt-sass": "^1.2.0",
+    "grunt-search": "^0.1.8",
+    "grunt-spritesmith": "^6.3.1",
+    "grunt-svgmin": "^3.2.0",
+    "grunt-svgstore": "^1.0.0",
+    "handlebars-helper-repeat": "^0.3.1",
+    "load-grunt-config": "^0.19.2",
+    "lodash": "^4.13.1",
+    "time-grunt": "^1.3.0"
+  },
+  "engines": {
+    "node": ">=6.2.1"
+  }
+}

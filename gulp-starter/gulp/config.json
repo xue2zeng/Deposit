@@ -1,0 +1,19 @@
+{
+  "site" : {
+    "name" : "gulp-starter",
+    "src" : "./src",
+    "dist" : "./dist"
+  },
+  "tasks" : {
+    "browserSync": {
+      "server": {
+        "baseDir": "dist"
+      }
+    },
+    "script" : {
+      "src" : "scripts",
+      "dist" : "scripts",
+      "extensions": ["js", "json"]
+    }
+  }
+}

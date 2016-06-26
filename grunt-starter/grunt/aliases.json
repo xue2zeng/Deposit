@@ -1,0 +1,53 @@
+{
+  "default": [
+    "build"
+  ],
+  "scripts": [
+    "jshint",
+    "rig",
+    "concat"
+  ],
+  "sprites": [
+    "sprite",
+    "search:evenSizedRetinaSprites"
+  ],
+  "icons": [
+    "svgmin",
+    "svgstore",
+    "copy:svg"
+  ],
+  "images": [
+    "sprites",
+    "icons",
+    "copy:images"
+  ],
+  "styles": [
+    "search:noExtend",
+    "sass",
+    "autoprefixer",
+    "cssmin"
+  ],
+  "fonts": [
+    "copy:fonts"
+  ],
+  "devBuild": [
+    "clean:all",
+    "scripts",
+    "images",
+    "styles",
+    "fonts"
+  ],
+  "build": [
+    "devBuild",
+    "imagemin:dynamic",
+    "cssmin",
+    "concat",
+    "uglify",
+    "icons"
+  ],
+  "serve": [
+    "devBuild",
+    "browserSync",
+    "watch"
+  ]
+}

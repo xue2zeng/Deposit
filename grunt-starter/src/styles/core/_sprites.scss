@@ -1,0 +1,129 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$close-name: 'close';
+$close-x: 0px;
+$close-y: 240px;
+$close-offset-x: 0px;
+$close-offset-y: -240px;
+$close-width: 12px;
+$close-height: 12px;
+$close-total-width: 256px;
+$close-total-height: 252px;
+$close-image: './dist/images/sprites.png';
+$close: (0px, 240px, 0px, -240px, 12px, 12px, 256px, 252px, './dist/images/sprites.png', 'close', );
+$collapse-name: 'collapse';
+$collapse-x: 12px;
+$collapse-y: 240px;
+$collapse-offset-x: -12px;
+$collapse-offset-y: -240px;
+$collapse-width: 12px;
+$collapse-height: 12px;
+$collapse-total-width: 256px;
+$collapse-total-height: 252px;
+$collapse-image: './dist/images/sprites.png';
+$collapse: (12px, 240px, -12px, -240px, 12px, 12px, 256px, 252px, './dist/images/sprites.png', 'collapse', );
+$expand-name: 'expand';
+$expand-x: 24px;
+$expand-y: 240px;
+$expand-offset-x: -24px;
+$expand-offset-y: -240px;
+$expand-width: 12px;
+$expand-height: 12px;
+$expand-total-width: 256px;
+$expand-total-height: 252px;
+$expand-image: './dist/images/sprites.png';
+$expand: (24px, 240px, -24px, -240px, 12px, 12px, 256px, 252px, './dist/images/sprites.png', 'expand', );
+$ui-icons-name: 'ui-icons';
+$ui-icons-x: 0px;
+$ui-icons-y: 0px;
+$ui-icons-offset-x: 0px;
+$ui-icons-offset-y: 0px;
+$ui-icons-width: 256px;
+$ui-icons-height: 240px;
+$ui-icons-total-width: 256px;
+$ui-icons-total-height: 252px;
+$ui-icons-image: './dist/images/sprites.png';
+$ui-icons: (0px, 0px, 0px, 0px, 256px, 240px, 256px, 252px, './dist/images/sprites.png', 'ui-icons', );
+$spritesheet-width: 256px;
+$spritesheet-height: 252px;
+$spritesheet-image: './dist/images/sprites.png';
+$spritesheet-sprites: ($close, $collapse, $expand, $ui-icons, );
+$spritesheet: (256px, 252px, './dist/images/sprites.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

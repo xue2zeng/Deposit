@@ -1,10 +1,11 @@
 {
-	"iisHostname": "grunt.local",
-	"src": ".",
-	"dist": "./dist",
-	"stylesDir": "styles",
-	"scriptsDir": "scripts",
-	"imagesDir": "images",
-	"spriteDir": "sprites",
-	"svgIconsDir": "icons"
+  "name": "grunt-starter",
+  "src": "./src",
+  "dist": "./dist",
+  "stylesDir": "styles",
+  "scriptsDir": "scripts",
+  "imagesDir": "images",
+  "spritesDir": "sprites",
+  "svgIconsDir": "icons",
+  "svgIconsCompressedDir": "icons.min"
 }

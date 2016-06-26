@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+// ==========================================================================
+//   Imports
+// ==========================================================================
+
+@import "vars";
+@import "mixins";
+
+// Plugins
+
+@import "plugins/magnific-popup";
+
+// Src
+@import "core/base";
+@import "core/buttons";
+@import "core/sprites";
+@import "core/svg";
+@import "core/type";
+@import "core/utils";
+
+// Layouts

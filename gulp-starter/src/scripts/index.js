@@ -1,5 +1,6 @@
+/* globals $ */
 'use strict'
 
-$(function() {
-  console.log('javascript');
-});
+$(function (app) {
+  console.log('javascript')
+})

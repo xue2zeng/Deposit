@@ -10,10 +10,24 @@
         "baseDir": "dist"
       }
     },
-    "script" : {
-      "src" : "scripts",
-      "dist" : "scripts",
+    "script": {
+      "src": "scripts",
+      "dist": "scripts",
       "extensions": ["js", "json"]
+    },
+    "style": {
+      "src": "styles",
+      "dist": "styles",
+      "autoprefixer": {
+        "browsers": ["last 3 version"]
+      },
+      "sass": {
+        "indentedSyntax": true,
+        "includePaths": [
+          "./node_modules/normalize.css"
+        ]
+      },
+      "extensions": ["sass", "scss", "css"]
     }
   }
 }
